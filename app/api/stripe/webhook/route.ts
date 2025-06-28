@@ -15,14 +15,13 @@ export async function POST(req: NextRequest) {
       sig,
       process.env.STRIPE_WEBHOOK_SECRET!
     );
-  } catch (err) {
+  } catch {
     return NextResponse.json({ error: 'Webhook signature verification failed.' }, { status: 400 });
   }
 
   // Procesează evenimentele relevante
   switch (event.type) {
     case 'checkout.session.completed': {
-      const session = event.data.object;
       // TODO: Salvează/actualizează abonamentul userului în DB
       break;
     }

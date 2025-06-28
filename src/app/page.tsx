@@ -242,7 +242,7 @@ export default function Home() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">Can I upgrade or downgrade my plan?</h3>
                 <p className="mt-2 text-gray-600">
-                  Yes, you can change your plan at any time. When upgrading, you'll be prorated for the remainder of your billing cycle. When downgrading, the new rate will apply at the start of your next billing cycle.
+                  Yes, you can change your plan at any time. When upgrading, you&apos;ll be prorated for the remainder of your billing cycle. When downgrading, the new rate will apply at the start of your next billing cycle.
                 </p>
               </div>
             </div>
@@ -250,7 +250,7 @@ export default function Home() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">What happens if I exceed my word limit?</h3>
                 <p className="mt-2 text-gray-600">
-                  If you exceed your monthly word limit, you'll be notified and can either upgrade your plan or wait until your next billing cycle. Any words over the limit will be processed at a pay-as-you-go rate.
+                  If you exceed your monthly word limit, you&apos;ll be notified and can either upgrade your plan or wait until your next billing cycle. Any words over the limit will be processed at a pay-as-you-go rate.
                 </p>
               </div>
               <div>
@@ -262,7 +262,7 @@ export default function Home() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">Do you offer refunds?</h3>
                 <p className="mt-2 text-gray-600">
-                  Yes, we offer a 14-day money-back guarantee for all plans. If you're not satisfied with our service, you can request a full refund within the first two weeks of your subscription.
+                  Yes, we offer a 14-day money-back guarantee for all plans. If you&apos;re not satisfied with our service, you can request a full refund within the first two weeks of your subscription.
                 </p>
               </div>
             </div>
@@ -274,7 +274,7 @@ export default function Home() {
       <div className="bg-blue-600 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-8">
-            Ready to ensure your content's authenticity?
+            Ready to ensure your content&apos;s authenticity?
           </h2>
           <Link 
             href="/signup" 

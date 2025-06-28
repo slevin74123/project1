@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
-import FaqSection from '@/components/FaqSection';
-import InfoSection from '@/components/InfoSection';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import FaqSection from '../../components/FaqSection';
+import InfoSection from '../../components/InfoSection';
 
 interface DetectionResult {
   winstonai: {
@@ -106,8 +106,8 @@ export default function AIDetection() {
       }
 
       setResult(data);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
       setLoading(false);
     }

@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
-import FaqSection from '@/components/FaqSection';
-import InfoSection from '@/components/InfoSection';
+import React, { useState } from 'react';
+import Image from 'next/image';
+import FaqSection from '../../components/FaqSection';
+import InfoSection from '../../components/InfoSection';
 
 interface DeepfakeResult {
   sightengine: {
@@ -91,8 +92,8 @@ export default function DeepfakeDetectionPage() {
       }
 
       setResult(data);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'An error occurred during detection.');
     } finally {
       setLoading(false);
     }
@@ -223,9 +224,11 @@ export default function DeepfakeDetectionPage() {
                 <h3 className="text-lg font-medium text-gray-900 mb-4">
                   Analyzed Image
                 </h3>
-                <img
+                <Image
                   src={imageUrl}
                   alt="Analyzed"
+                  width={500}
+                  height={300}
                   className="rounded-lg max-w-full h-auto mx-auto shadow-md"
                 />
               </div>

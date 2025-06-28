@@ -36,8 +36,8 @@ export async function POST(request: Request) {
     try {
       const response = await axios.request(options);
       return NextResponse.json(response.data);
-    } catch (error: any) {
-      if (error.response) {
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error) && error.response) {
         console.error('Eden AI Error:', error.response.data);
         return NextResponse.json(
           {
@@ -50,12 +50,12 @@ export async function POST(request: Request) {
       }
       throw error;
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Deepfake Detection Error:', error);
     return NextResponse.json(
       {
         error: 'An unexpected error occurred. Please try again later.',
-        details: error.message,
+        details: error instanceof Error ? error.message : 'Unknown error',
       },
       { status: 500 }
     );

@@ -3,9 +3,20 @@
 import React, { useEffect, useState } from 'react';
 import { BILLING_PLANS } from '@/lib/billing';
 
+interface UsageData {
+  current: number;
+  limit: number;
+  remaining: number;
+}
+
+interface PlanData {
+  name: string;
+  features: string[];
+}
+
 export default function BillingPage() {
-  const [usage, setUsage] = useState<any>(null);
-  const [plan, setPlan] = useState<any>(null);
+  const [usage, setUsage] = useState<UsageData | null>(null);
+  const [plan, setPlan] = useState<PlanData | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {

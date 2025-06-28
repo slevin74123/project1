@@ -1,7 +1,7 @@
 import Stripe from 'stripe';
 
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2022-11-15',
+  apiVersion: '2025-05-28.basil',
 });
 
 export const BILLING_PLANS = [
@@ -32,7 +32,7 @@ export const BILLING_PLANS = [
 ];
 
 // Mock usage - înlocuiește cu PostHog API pentru usage real
-export async function getCurrentUsage(userId: string) {
+export async function getCurrentUsage() {
   // TODO: Fetch usage from PostHog
   return {
     current: 123,
